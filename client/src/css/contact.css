@@ -1,5 +1,5 @@
 :root {
-    --blue: #007bff;
+    --blue: #d477f9;
     --indigo: #6610f2;
     --purple: #6f42c1;
     --pink: #e83e8c;
@@ -12,7 +12,7 @@
     --white: #fff;
     --gray: #6c757d;
     --gray-dark: #343a40;
-    --primary: #007bff;
+    --primary: #d477f9;
     --secondary: #6c757d;
     --success: #28a745;
     --info: #17a2b8;
@@ -1614,7 +1614,7 @@
       border-color: #80bdff;
       outline: 0;
       -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+      box-shadow: 0 0 0 0.2rem rgba(202, 216, 232, 0.25); }
     .form-control::-webkit-input-placeholder {
       color: #6c757d;
       opacity: 1; }
@@ -2066,24 +2066,24 @@
  
   .btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    background-color: #d477f9;
+    border-color: #d477f9; }
     .btn-primary:hover {
       color: #fff;
-      background-color: #0069d9;
-      border-color: #0062cc; }
+      background-color: #f763ef;
+      border-color: #df74f0; }
     .btn-primary:focus, .btn-primary.focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); }
     .btn-primary.disabled, .btn-primary:disabled {
       color: #fff;
-      background-color: #007bff;
-      border-color: #007bff; }
+      background-color: #d477f9;
+      border-color: #d477f9; }
     .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
     .show > .btn-primary.dropdown-toggle {
       color: #fff;
-      background-color: #0062cc;
-      border-color: #005cbf; }
+      background-color: #ea65f4;
+      border-color: #fd69f5; }
       .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
       .show > .btn-primary.dropdown-toggle:focus {
         -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
@@ -2265,23 +2265,23 @@
         box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
  
   .btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff; }
+    color: #d477f9;
+    border-color: #d477f9; }
     .btn-outline-primary:hover {
       color: #fff;
-      background-color: #007bff;
-      border-color: #007bff; }
+      background-color: #d477f9;
+      border-color: #d477f9; }
     .btn-outline-primary:focus, .btn-outline-primary.focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
     .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-      color: #007bff;
+      color: #d477f9;
       background-color: transparent; }
     .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
     .show > .btn-outline-primary.dropdown-toggle {
       color: #fff;
-      background-color: #007bff;
-      border-color: #007bff; }
+      background-color: #d477f9;
+      border-color: #d477f9; }
       .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
       .show > .btn-outline-primary.dropdown-toggle:focus {
         -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
@@ -2450,7 +2450,7 @@
  
   .btn-link {
     font-weight: 400;
-    color: #007bff;
+    color: #d477f9;
     text-decoration: none; }
     .btn-link:hover {
       color: #0056b3;
@@ -2694,7 +2694,7 @@
     .dropdown-item.active, .dropdown-item:active {
       color: #fff;
       text-decoration: none;
-      background-color: #007bff; }
+      background-color: #d477f9; }
     .dropdown-item.disabled, .dropdown-item:disabled {
       color: #6c757d;
       pointer-events: none;
@@ -3002,8 +3002,8 @@
     opacity: 0; }
     .custom-control-input:checked ~ .custom-control-label::before {
       color: #fff;
-      border-color: #007bff;
-      background-color: #007bff; }
+      border-color: #d477f9;
+      background-color: #d477f9; }
     .custom-control-input:focus ~ .custom-control-label::before {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }

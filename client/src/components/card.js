@@ -1,62 +1,88 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
+import { Card, Col, Row } from 'react-bootstrap';
 
-export const Card = () => {
+// const cardsData = [
+//   {
+//     title: 'Card Title 1',
+//     image: 'https://picsum.photos/200/150',
+//     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+//     buttonLabel: 'Go somewhere',
+//     buttonLink: '#'
+//   },
+//   {
+//     title: 'Card Title 2',
+//     image: 'https://picsum.photos/200/150',
+//     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+//     buttonLabel: 'Go somewhere',
+//     buttonLink: '#'
+//   },
+//   {
+//     title: 'Card Title 3',
+//     image: 'https://picsum.photos/200/150',
+//     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+//     buttonLabel: 'Go somewhere',
+//     buttonLink: '#'
+//   },
+//   {
+//     title: 'Card Title 1',
+//     image: 'https://picsum.photos/200/150',
+//     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+//     buttonLabel: 'Go somewhere',
+//     buttonLink: '#'
+//   },
+//   {
+//     title: 'Card Title 2',
+//     image: 'https://picsum.photos/200/150',
+//     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+//     buttonLabel: 'Go somewhere',
+//     buttonLink: '#'
+//   },
+//   {
+//     title: 'Card Title 3',
+//     image: 'https://picsum.photos/200/150',
+//     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+//     buttonLabel: 'Go somewhere',
+//     buttonLink: '#'
+//   }
+// ];
+
+
+
+export const Cards = () => {
+  const [list, setlist] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/add/gethotel")
+        .then((response)=>{
+          const data=response.data.data
+          console.log(response)
+          setlist(data)
+          console.log("data received");
+        })
+        .catch((err)=>console.log(err))
+    }, [])
+    console.log("4");
+    console.log(list);
   return (
-    <div className="container"> 
-    <div className="card">
-      <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" className="img-fluid" />
-        <a href="#!">
-          <div className="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div className="card-body">
-        <h5 className="card-title font-weight-bold"><a>La Sirena restaurant</a></h5>
-        <ul className="list-unstyled list-inline mb-0">
-          <li className="list-inline-item me-0">
-            <i className="fas fa-star text-warning fa-xs"> </i>
-          </li>
-          <li className="list-inline-item me-0">
-            <i className="fas fa-star text-warning fa-xs"></i>
-          </li>
-          <li className="list-inline-item me-0">
-            <i className="fas fa-star text-warning fa-xs"></i>
-          </li>
-          <li className="list-inline-item me-0">
-            <i className="fas fa-star text-warning fa-xs"></i>
-          </li>
-          <li className="list-inline-item">
-            <i className="fas fa-star-half-alt text-warning fa-xs"></i>
-          </li>
-          <li className="list-inline-item">
-            <p className="text-muted">4.5 (413)</p>
-          </li>
-        </ul>
-        <p className="mb-2">$ • American, Restaurant</p>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the bulk of the
-          card's content.
-        </p>
-        <hr className="my-4" />
-        <p className="lead"><strong>Tonight's availability</strong></p>
-        <ul className="list-unstyled list-inline d-flex justify-content-between">
-          <li className="list-inline-item me-0">
-            <div className="chip me-0">5:30PM</div>
-          </li>
-          <li className="list-inline-item me-0">
-            <div className="chip bg-secondary text-white me-0">7:30PM</div>
-          </li>
-          <li className="list-inline-item me-0">
-            <div className="chip me-0">8:00PM</div>
-          </li>
-          <li className="list-inline-item me-0">
-            <div className="chip me-0">9:00PM</div>
-          </li>
-        </ul>
-        <a href="#!" classNameName="btn btn-link link-secondary p-md-1 mb-0">Button</a>
-      </div>
+    <div>
+      <h1>Services</h1>
+      <br></br>
+    <Row xs={1} md={2} lg={3} className="g-4">
+      {list.map((card, index) => (
+        <Col key={index}>
+          <Card className="h-100">
+            <Card.Img variant="top" src={card.image} />
+            <Card.Body>
+              <Card.Title>{card.hotel_name }</Card.Title>
+              <Card.Text>{card.location}</Card.Text>
+              <Card.Text>Distance: {card.distance}</Card.Text>
+              <Card.Text>Rating: {card.rating}</Card.Text>
+              {/* <a href={card.buttonLink} className="btn btn-primary">{card.buttonLabel}</a> */}
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
     </div>
-    
-</div>
-  )
-}
+  );
+};

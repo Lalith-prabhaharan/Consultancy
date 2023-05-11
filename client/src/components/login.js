@@ -59,7 +59,7 @@ export const Login = () => {
                 <div className="LoginFormInnerContainer">
                     <header className="header">Login to Your Account</header>
                     <header className="subHeader">Welcome to <b>VASAVI MAHAL!</b></header>
-                    <p>Aldready Have an Account,  <Link to="/signup">Sign Up</Link></p>
+                    <p>Don't Have an Account?  <Link to="/signup">Sign Up</Link></p>
                     <form>
                         <div className="inputContainer">
                             <label className="label" ><span>Email

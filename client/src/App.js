@@ -14,6 +14,8 @@ import { Explore } from './components/explore';
 import { Contact } from './components/contact';
 import { Locate } from './components/locate';
 import { Nearbyhotel } from './components/nearbyhotel';
+import { Cards } from './components/card';
+import { Calender } from './components/calender';
 function App() {
   return (
     <div className="App">
@@ -26,7 +28,7 @@ function App() {
       <Route path="/signup" element={<Signup/>}></Route>
       <Route path="/locate" element={<Locate/>}></Route>
       <Route path="/explore" element={<Explore/>}></Route>
-      <Route path="/hotel" element={<Nearbyhotel/>}></Route>
+      <Route path="/hotel" element={<Cards/>}></Route>
       <Route path="/contactus" element={<RequiredAuth><Contact/></RequiredAuth>}></Route>
       <Route path="/booking" element={<RequiredAuth><Booking/></RequiredAuth>}></Route>
       </Routes>

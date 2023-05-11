@@ -16,7 +16,7 @@ import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClic
 
 
 export const Calender=()=>{
-    const[event,setEvent]=useState("")
+    const[event1,setEvent]=useState([])
     const [start, setStart] = useState("")
     const[list,setList]=useState([])
     useEffect(() => {
@@ -24,38 +24,45 @@ export const Calender=()=>{
     const data=response.data.data
     console.log(response)
     setList(data)
-    
-    })
-    .catch((err)=>console.log(err))
-    }, [])
-    const li = list.map((x,index) => {
+  })
+  .catch((err)=>console.log(err))
+}, [])
+console.log(list)
+    // const li = list.map((x,index) => {
        
-        return  (
-        <FullCalendar
-            plugins={[ dayGridPlugin, interactionPlugin ]}
-            //Dayclick open sweetalert
-            dateClick={function(arg) {
-              $("#myModal").modal("show"); 
-              $(".modal-body").html("");
-              $(".modal-body").html("<h3>"+arg.dateStr+"</h3>");
-            }}
-            initialView="dayGridMonth"
-            events={[
-                { title: x.eventType, date:x.startDate}
-              ]}
-          />)
+    //     return  (
+    //     <FullCalendar
+    //         plugins={[ dayGridPlugin, interactionPlugin ]}
+    //         //Dayclick open sweetalert
+    //         dateClick={function(arg) {
+    //           $("#myModal").modal("show"); 
+    //           $(".modal-body").html("");
+    //           $(".modal-body").html("<h3>"+arg.dateStr+"</h3>");
+    //         }}
+    //         initialView="dayGridMonth"
+    //         events={[
+    //             { title: x.eventType, date:x.startDate}
+    //           ]}
+    //       />)
           
-        }
-    )
+    //     } 
+    // )
+    // for (let i = 0; i < list.length; i++) {
+    //     setEvent(...event,{title:list[i].eventType, date:list[i].startDate})      
+    // }
+  
+    // list.map((x,index)=>(
+    //   event1.push({title:x.eventType, date:x.startDate},)
+    // ))
+    // console.log(event1)
 
   return (
     <div className="MainDiv"> 
     <br></br>
     <br></br>
     <h2><u>SEE OUR BOOKINGS</u></h2>
-    
        <div className="container">
-        {/*  <FullCalendar
+         <FullCalendar
             plugins={[ dayGridPlugin, interactionPlugin ]}
             //Dayclick open sweetalert
             dateClick={function(arg) {
@@ -64,13 +71,13 @@ export const Calender=()=>{
               $(".modal-body").html("<h3>"+arg.dateStr+"</h3>");
             }}
             initialView="dayGridMonth"
-            events={[
-                // { title: 'Marriage 2', date: '2023-04-02' },
-                // { title: 'Marriage 3', date: '2023-04-02' },
-                
-              ]}
-          /> */}
-          {li}
+            events={
+              list.map((x,index)=>(
+                {title: "Booked" , date: x.startDate}
+              ))
+            }
+          />
+          {/* {li} */}
         </div>     
     </div>
   );

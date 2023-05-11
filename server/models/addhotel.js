@@ -15,9 +15,13 @@ const hotelSchema=new Schema({
         type:String,
         required:true
     },
-    type:{
+    contact:{
         type:String,
         requrired:true
+    },
+    image:{
+        type:String,
+        required:true
     },
     rating:{
         type:Number,

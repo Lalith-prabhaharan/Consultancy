@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import styles from "../css/signup.module.css"
 import login from '../images/loginbg3.jpg'
 import axios from "axios"
 export const Signup = () => {
